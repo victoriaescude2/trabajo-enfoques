@@ -32,7 +32,7 @@
   </div>
   <div *ngIf="!inicio">
     <ion-item-divider>
-      <h5 class="ion-text-center">PERSONAJES FAVORITOS</h5>
+      <ion-title class="ion-text-center" style="font-size:medium;">PERSONAJES FAVORITOS</ion-title>
     </ion-item-divider>
     <ion-item *ngFor="let char of favourites">
       <ion-card (click)="showCharacter(char.id)"> 

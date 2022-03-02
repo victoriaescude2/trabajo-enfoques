@@ -74,7 +74,7 @@ export class CharacterPage implements OnInit {
   async information() {
     const toast = await this.toastController.create({
       header: 'Información',
-      message: 'Navegá por las caracteristicas del personaje, marcalo como favorito o compartilo en tus redes.',
+      message: 'Navega por las caracteristicas del personaje, marcalo como favorito o compartilo!',
       position:'middle',
       buttons: [
         {
@@ -93,7 +93,6 @@ export class CharacterPage implements OnInit {
       ]
     });
     await toast.present();
-
     const { role } = await toast.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
