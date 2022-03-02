@@ -82,6 +82,7 @@ export class HomePage implements OnInit {
 
   home(){
     this.inicio = true
+    this.characters = []
     this.controlNav.navigateForward("/")
   }
 
