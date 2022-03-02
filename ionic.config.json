@@ -1,0 +1,7 @@
+{
+  "name": "trabajoEnfoques",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

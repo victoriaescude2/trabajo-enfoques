@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Superhéroes | Villanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background-image">
+  <div *ngIf="inicio">
+    <ion-toolbar class="second-toolbar">
+      <ion-list >
+        <ion-item>
+          <ion-searchbar [animated]="true" [(ngModel)]="input" name="Busqueda" style="width: 80%; top: 10px;"></ion-searchbar>
+          <ion-select [(ngModel)]="searchType">
+            <ion-select-option value=1>ID</ion-select-option>
+            <ion-select-option value=2>Nombre</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <section class="full-width">
+          <ion-button (click)="search()" expand="full" color="secondary" style="margin-top: 10px;">Buscar</ion-button>
+        </section>   
+      </ion-list>
+    </ion-toolbar>
+    <ion-item *ngFor="let char of characters">
+      <ion-card (click)="showCharacter(char.id)"> 
+        <div style="display: flex; align-items: center;justify-content: center;">
+          <img src="{{char.image.url}}"/>
+        </div>
+        <ion-card-header>
+          <ion-card-title>{{char.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </div>
+  <div *ngIf="!inicio">
+    <ion-item-divider>
+      <h5 class="ion-text-center">PERSONAJES FAVORITOS</h5>
+    </ion-item-divider>
+    <ion-item *ngFor="let char of favourites">
+      <ion-card (click)="showCharacter(char.id)"> 
+        <div style="display: flex; align-items: center;justify-content: center;">
+          <img src="{{char.image.url}}"/>
+        </div>
+        <ion-card-header>
+          <ion-card-title>{{char.name}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </div>
+</ion-content>
+
+  <!-- Searchbar in a Toolbar -->
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" (click)="home()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="star">
+        <ion-icon name="star" (click)="getFavorites()"></ion-icon>
+        <ion-label>Favoritos</ion-label>
+        <ion-badge>{{quantity_favourites}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button tab="information" (click)="information()">
+        <ion-icon name="information"></ion-icon>
+        <ion-label>Información</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>

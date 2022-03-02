@@ -1,0 +1,124 @@
+<ion-content>
+<ion-item *ngFor="let atributtes of character">
+  <div style="height: 100%; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+  <ion-card class="card-center">
+  <!-- Botones favorite and share -->
+    <ion-button style="float: right;" (click)="favorite()">
+        <ion-icon id="notFavorite" name="star-outline"></ion-icon>
+        <ion-icon id="favorite" name="star" hidden></ion-icon>
+    </ion-button>
+    <ion-button style="float: right;" (click)="share()"><ion-icon name="share-social-outline"></ion-icon></ion-button>
+  <!--  -->
+    <div style="display: flex; align-items: center;justify-content: center;">
+      <img src="{{atributtes.image.url}}" class="image"/>
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{atributtes.biography["full-name"]}}</ion-card-subtitle>
+      <ion-card-title>{{atributtes.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="appearance">
+          <ion-item slot="header">
+            <ion-label>Biografía</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <ion-item>
+              <ion-label>{{atributtes.biography["place-of-birth"]}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+        <ion-accordion value="appearance">
+          <ion-item slot="header">
+            <ion-label>Apariencia</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <ion-item>
+              <ion-label>Género: {{atributtes.appearance.gender}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Altura: {{atributtes.appearance.height[1]}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Peso: {{atributtes.appearance.weight[1]}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Color Ojos: {{atributtes.appearance["eye-color"]}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Color Pelo: {{atributtes.appearance["hair-color"]}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+        <ion-accordion value="colors">
+          <ion-item slot="header">
+            <ion-label>Poderes</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <ion-item>
+              <ion-label>Combate: {{atributtes.powerstats.combat}}%</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Durabilidad: {{atributtes.powerstats.durability}}%</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Inteligencia: {{atributtes.powerstats.intelligence}}%</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Energía: {{atributtes.powerstats.power}}%</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Velocidad: {{atributtes.powerstats.speed}}%</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Fuerza: {{atributtes.powerstats.strength}}%</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+        <ion-accordion value="ocupation">
+          <ion-item slot="header">
+            <ion-label>Ocupación</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <ion-item>
+              <ion-label>{{atributtes.work.occupation}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+        <ion-accordion value="numbers">
+          <ion-item slot="header">
+            <ion-label>Editorial</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <ion-item>
+              <ion-label>{{atributtes.biography.publisher}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
+      <!-- <section class="full-width">
+        <ion-button (click)="return()" expand="full" color="secondary" style="margin-top: 10px;">Volver</ion-button>
+      </section> -->
+    </ion-card-content>
+  </ion-card>
+  </div>
+</ion-item>
+</ion-content>
+
+<!-- Searchbar in a Toolbar -->
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" (click)="return()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="information" (click)="information()">
+        <ion-icon name="information"></ion-icon>
+        <ion-label>Información</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+</ion-footer>
