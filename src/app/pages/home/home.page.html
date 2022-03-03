@@ -34,7 +34,7 @@
   </div>
   <div *ngIf="!inicio">
     <ion-item-divider>
-      <ion-title style="font-size:medium;">PERSONAJES FAVORITOS</ion-title>
+      <ion-title style="font-size:medium;">PERSONAJES FAVORITOS ({{quantity_favourites}})</ion-title>
     </ion-item-divider>
     <ion-item *ngFor="let char of favourites">
       <div style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 5px;">
@@ -61,7 +61,6 @@
       </ion-button>
       <ion-button size="medium" color="none" tab="star" (click)="getFavorites()">
         <ion-icon name="star"></ion-icon>
-        <ion-badge color="light">{{quantity_favourites}}</ion-badge>
       </ion-button>
       <ion-button size="medium" color="none" tab="information" (click)="information()">
         <ion-icon name="information"></ion-icon>

@@ -30,9 +30,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Se inicia")
-    this.inicio = true
-    this.getQuantityFavorites()
+    this.inicio = false
   }
 
   async information() {
@@ -64,6 +62,7 @@ export class HomePage implements OnInit {
 
   getFavorites(){
     this.database.getHeroes().then((data)=>{
+      this.quantity_favourites = data.rows.length
       if (data.rows.length <= 0){
         this.toastMsg("No hay personajes marcados como favoritos");
       }else{
@@ -76,12 +75,6 @@ export class HomePage implements OnInit {
         
       }
   })
-  }
-
-  getQuantityFavorites(){
-    this.database.getHeroes().then((data)=>{
-      this.quantity_favourites = data.rows.length
-    })
   }
 
   home(){
