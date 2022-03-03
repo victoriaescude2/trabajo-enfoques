@@ -30,6 +30,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    console.log("Se inicia")
     this.inicio = true
     this.getQuantityFavorites()
   }
@@ -79,7 +80,7 @@ export class HomePage implements OnInit {
 
   getQuantityFavorites(){
     this.database.getHeroes().then((data)=>{
-      this.quantity_favourites= data.rows.length
+      this.quantity_favourites = data.rows.length
     })
   }
 
@@ -87,7 +88,7 @@ export class HomePage implements OnInit {
     this.inicio = true
     this.characters = []
     this.favourites = [];
-    this.controlNav.navigateForward("/")
+    this.controlNav.navigateForward('')
   }
 
   search(){

@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DatabaseService } from 'src/app/service/database.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
 @Component({
@@ -17,7 +18,7 @@ export class CharacterPage implements OnInit {
   character=[]
   favourites=[]
   id=""
-  constructor(private charactersService: CharactersService, private toastController: ToastController, private router:Router, public database: DatabaseService,
+  constructor(private charactersService: CharactersService, private controlNav:NavController, private toastController: ToastController, private router:Router, public database: DatabaseService,
     private activatedRoute: ActivatedRoute, private socialSharing: SocialSharing) { }
 
   ngOnInit() {
@@ -98,7 +99,7 @@ export class CharacterPage implements OnInit {
   }
 
   return(){
-    this.router.navigateByUrl('/')
+    this.controlNav.navigateRoot('home')
   }
 
   favorite(){

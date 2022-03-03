@@ -56,19 +56,16 @@
   <ion-toolbar>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home" (click)="home()">
+      <ion-button color="none" tab="home" (click)="home()">
         <ion-icon name="home"></ion-icon>
-        <ion-label>Inicio</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="star" (click)="getFavorites()">
+      </ion-button>
+      <ion-button color="none" tab="star" (click)="getFavorites()">
         <ion-icon name="star"></ion-icon>
-        <ion-label>Favoritos</ion-label>
-        <ion-badge>{{quantity_favourites}}</ion-badge>
-      </ion-tab-button>
-      <ion-tab-button tab="information" (click)="information()">
+        <ion-badge color="light">{{quantity_favourites}}</ion-badge>
+      </ion-button>
+      <ion-button color="none" tab="information" (click)="information()">
         <ion-icon name="information"></ion-icon>
-        <ion-label>Información</ion-label>
-      </ion-tab-button>
+      </ion-button>
     </ion-tab-bar>
   </ion-tabs>
 </ion-toolbar>
