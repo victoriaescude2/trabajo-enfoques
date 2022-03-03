@@ -67,8 +67,10 @@ export class HomePage implements OnInit {
         this.toastMsg("No hay personajes marcados como favoritos");
       }else{
         this.inicio = false
+        console.log("Data: " + data)
         for (var i = 0; i < data.rows.length; i++) {
           this.favourites.push(data.rows.item(i));
+          console.log("Pushea: " + data.rows.item(i))
         }
         
       }
