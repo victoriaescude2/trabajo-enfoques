@@ -119,6 +119,8 @@ export class HomePage implements OnInit {
 
   showCharacter(id){
     this.inicio = true
+    this.input = '';
+    this.characters = []
     this.controlNav.navigateForward('/character/'+id)
   }
 
