@@ -67,6 +67,7 @@ export class HomePage implements OnInit {
         this.toastMsg("No hay personajes marcados como favoritos");
       }else{
         this.inicio = false
+        this.favourites = []
         console.log("Data: " + data)
         for (var i = 0; i < data.rows.length; i++) {
           this.favourites.push(data.rows.item(i));
@@ -81,7 +82,7 @@ export class HomePage implements OnInit {
     this.inicio = true
     this.characters = []
     this.favourites = [];
-    this.controlNav.navigateForward('')
+    this.controlNav.navigateRoot('')
   }
 
   search(){
