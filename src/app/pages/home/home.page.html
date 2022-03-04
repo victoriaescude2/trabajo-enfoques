@@ -22,7 +22,7 @@
     <ion-item *ngFor="let char of characters">
       <div style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 5px;">
         <ion-card (click)="showCharacter(char.id)"> 
-          <div style="display: flex; align-items: center;justify-content: center;">
+          <div style="display: flex; align-items: center;justify-content: center; width: 80%; margin-left: 10%; margin-top: 6%;">
             <img src="{{char.image.url}}"/>
           </div>
           <ion-card-header>
