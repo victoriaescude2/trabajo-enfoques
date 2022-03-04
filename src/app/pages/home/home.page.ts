@@ -118,6 +118,7 @@ export class HomePage implements OnInit {
   }
 
   showCharacter(id){
+    this.inicio = true
     this.controlNav.navigateForward('/character/'+id)
   }
 
