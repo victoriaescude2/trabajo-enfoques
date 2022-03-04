@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.inicio = false
+    this.inicio = true
   }
 
   async information() {
