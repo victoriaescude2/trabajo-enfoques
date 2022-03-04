@@ -99,7 +99,7 @@ export class CharacterPage implements OnInit {
   }
 
   return(){
-    this.controlNav.navigateRoot('home')
+    this.controlNav.navigateRoot('/home')
   }
 
   favorite(){
